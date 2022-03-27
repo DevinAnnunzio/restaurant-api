@@ -4,6 +4,8 @@
 
 **restaurant-api** is a simple web app for the interview with Paidy
 
+
+## Installation
 1. Clone the repo to your local machine.
 
 2. Use node package manager [npm](https://www.npmjs.com/) to install necessary packages.
