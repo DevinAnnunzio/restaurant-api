@@ -17,7 +17,7 @@ npm i
 
 ## Functionality 
 
-The current functionality:
+The current functionality requirements:
 * [] The client (the restaurant staff “devices” making the requests) MUST be able to: add one or more items with a table number, remove an item for a table, and query the items still remaining for a table.
 * [] The application MUST, upon creation request, store the item, the table number, and how long the item will take to cook.
 * [] The application MUST, upon deletion request, remove a specified item for a specified table number.
