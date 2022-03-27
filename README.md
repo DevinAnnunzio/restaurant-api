@@ -43,7 +43,7 @@ Here's a walkthrough of implemented user stories: Currently need to add screensh
 
 ## Built with
 [React](https://reactjs.org/)<br/>
-[Nodejs](https://nodejs.org/en/)<br/>
+[Node](https://nodejs.org/en/)<br/>
 [Express](https://expressjs.com/)<br/>
 [Knex.js](https://knexjs.org/)<br/>
 [PostgreSQL](https://www.postgresql.org/docs/)<br/>
