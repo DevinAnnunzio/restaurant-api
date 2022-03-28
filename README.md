@@ -39,6 +39,7 @@ Here's a walkthrough of implemented user stories: Currently need to add screensh
 
 
 ## Notes
+This project was built to learn more about architecture
 
 
 ## Built with
