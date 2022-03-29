@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ListOfOrders } from "./components/ListOfOrders";
 import { PlaceOrder } from "./components/PlaceOrder";
+import { DeleteByName } from "./components/DeleteByName";
 
 function App() {
 const [allOrders, setAllOrders] = useState([]);
@@ -18,12 +19,19 @@ useEffect(() => {
 },[])
 
   return (
-    <div>
-      {state === "allorders" ? 
+    <>
+            {state === "allorders" ? 
       <div><ListOfOrders allOrders={allOrders} getAllOrders={getAllOrders}/>
-      <button onClick={()=> setState("placeorder")}>Place order</button></div>
-      : <PlaceOrder setState={setState} getAllOrders={getAllOrders}/>}
-    </div>
+      <button onClick={()=> setState("placeorder")}>Place order</button>
+      <button onClick={()=> setState("deletebyname")}>Delete food by name</button>
+      <button onClick={()=> setState("queryitem")}>Query item for table number</button>
+      <button onClick={()=> setState("querytable")}>Query by table number for all items</button>      
+      </div> : <div></div>}
+
+      {state === "placeorder"? <PlaceOrder setState={setState} getAllOrders={getAllOrders}/>: <div></div>}
+      {state === "deletebyname"? <DeleteByName setState={setState} getAllOrders={getAllOrders}/>: <div></div>}
+
+    </>
   );
 }
 

@@ -25,7 +25,10 @@ async function getAllFood(){
 
 async function deleteOrder(order){
     //Conv to lower case to better match item
-    let obj = {food:order.food.toLowerCase()}
+    console.log(order.food)
+    console.log(order)
+    let item = order.food.toLowerCase()
+    let obj = {food:item}
     await db('orders').del().where({food:obj.food})
 }
 

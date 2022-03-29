@@ -29,6 +29,7 @@ app.post('/api/foods', (req, res) => {
     }
 })
 
+//******************************************* ************************ ******************* */
 //Get all food items
 app.get('/api/allorders', (req,res) => {
     try {
@@ -39,8 +40,12 @@ app.get('/api/allorders', (req,res) => {
     }
 })
 
+
+//******************************************* ************************ ******************* */
 //Remove an item from table by food name
 app.delete('/api/foods',(req,res) =>{
+    console.log("SERVER")
+    console.log(req.body)
     try {
         Orders.deleteOrder(req.body)
         .then(item => {res.status(200).json(item)})
