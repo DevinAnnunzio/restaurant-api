@@ -15,7 +15,7 @@ npm i
 ```
 4. Next in the terminal type the command below
 ```bash
-npx knex migrate:latest --knexfile db/knexfile.js
+npm run migrate
 ```
 
 ## Functionality 
