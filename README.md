@@ -2,18 +2,21 @@
 
 ## *Devin Annunzio*
 
-**restaurant-api** is a simple web app for the interview with Paidy
+**restaurant-api** is a simple web app 
 
 
 ## Installation
 1. Clone the repo to your local machine.
-
-2. Use node package manager [npm](https://www.npmjs.com/) to install necessary packages.
+2. Create a postgres db called paidy 
+3. Use node package manager [npm](https://www.npmjs.com/) to install necessary packages.
 
 ```bash
 npm i
 ```
-3.
+4. Next in the terminal type the command below
+```bash
+npm run migrate
+```
 
 ## Functionality 
 
@@ -39,6 +42,7 @@ Here's a walkthrough of implemented user stories: Currently need to add screensh
 
 
 ## Notes
+This project was built to learn more about architecture
 
 
 ## Built with
