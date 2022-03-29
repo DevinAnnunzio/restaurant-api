@@ -33,16 +33,13 @@ async function deleteOrder(order){
 //The application MUST, upon query request, show a specified item for a specified table number.
 async function getItemAtTable(item){
     let orderRequested = await db('orders').select('table_number', 'food' ).where({table_number: item.table, food: item.food.toLowerCase()})
-    console.log("In helper")
-    console.log(orderRequested)
+
     return orderRequested;
 }
 
 //The application MUST, upon query request, show all items for a specified table number.
 async function getAllItemsAtTable(item){
     let orderRequested = await db('orders').select('food' ).where({table_number: item.table})
-    console.log("In helper")
-    console.log(orderRequested)
     return orderRequested;
 }
 

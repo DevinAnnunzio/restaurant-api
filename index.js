@@ -1,8 +1,9 @@
+const dotenv = require("dotenv").config();
 const express = require('express')
 const app = express();
 const knex = require('knex')
 const cors = require('cors')
-const PORT = 8000
+const PORT = process.env.PORT || 8000;
 
 const Orders = require('./db/models/dbhelper')
 
@@ -10,12 +11,14 @@ const Orders = require('./db/models/dbhelper')
 //json parsing middleware
 app.use(cors())
 app.use(express.json())
+app.use(express.static(__dirname + '/build'));
 
 
 app.get('/', (req, res) => {
     res.send("Oh no")
 })
 
+//******************************************* ************************ ******************* */
 //Add a food item 
 app.post('/api/foods', (req, res) => {
     try {
@@ -68,10 +71,10 @@ app.get('/api/tables', (req,res) => {
 })
 
 
+//******************************************** ************************ ************************ ****************** */
 //The application MUST, upon deletion request, remove a specified item for a specified table number.
 app.delete('/api/foods/:table', (req,res) => {
-    console.log(req.body);
-    console.log(req.params);
+
     let foodObj = {table: req.params.table, food: req.body.food}
     try {
         Orders.deleteItemAtTable(foodObj)

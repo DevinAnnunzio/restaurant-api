@@ -4,7 +4,7 @@ module.exports = {
     client: "postgresql",
     connection: {
       database: "paidy",
-      user: "user",
+      user: process.env.DB_USER,
     },
     pool: {
       min: 2,
