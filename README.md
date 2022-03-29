@@ -13,7 +13,7 @@
 ```bash
 npm i
 ```
-4.
+4. Next in the terminal type the command below
 ```bash
 npx knex migrate:latest --knexfile db/knexfile.js
 ```
