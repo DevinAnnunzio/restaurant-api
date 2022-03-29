@@ -58,6 +58,15 @@ app.get('/api/foods/:table',(req,res) => {
 })
 
 //The application MUST, upon query request, show all items for a specified table number.
+app.get('/api/tables', (req,res) => {
+    try {
+        Orders.getAllItemsAtTable(req.body)
+        .then(orders => {res.status(200).json(orders)});
+    } catch (error) {
+        res.status(500).json({ message: 'Can not get orders from table requested' })
+    }
+})
+
 
 //The application MUST, upon deletion request, remove a specified item for a specified table number.
 app.delete('/api/foods/:table', (req,res) => {
