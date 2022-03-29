@@ -14,12 +14,12 @@ async function add(food){
         convertedTimeToCook = food.time_to_cook * 60;
     }
     const updatedFood = {table_number: food.table_number, food: food.food.toLowerCase(), time_to_cook: convertedTimeToCook}
-    await db("orders").insert(updatedFood);
+    await db('orders').insert(updatedFood);
 }
 
 //Get all orders
 async function getAllFood(){
-    let allOrders = await db("orders")
+    let allOrders = await db('orders')
     return allOrders
 }
 
@@ -31,15 +31,18 @@ async function deleteOrder(order){
 
 
 //The application MUST, upon query request, show a specified item for a specified table number.
-
+async function getItemAtTable(item){
+    let orderRequested = await db('orders').select('table_number', 'food' ).where({table_number: item.table, food: item.food.toLowerCase()})
+    console.log("In helper")
+    console.log(orderRequested)
+    return orderRequested;
+}
 
 //The application MUST, upon query request, show all items for a specified table number.
 
 //The application MUST, upon deletion request, remove a specified item for a specified table number.
 async function deleteItemAtTable(item){
-    console.log("HELPER")
-    console.log(item);
     await db('orders').del().where({table_number: item.table, food: item.food.toLowerCase()})
 }
 
-module.exports = {add, getAllFood, deleteOrder, deleteItemAtTable}
+module.exports = {add, getAllFood, deleteOrder, deleteItemAtTable, getItemAtTable}

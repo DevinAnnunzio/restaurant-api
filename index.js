@@ -47,6 +47,15 @@ app.delete('/api/foods',(req,res) =>{
 })
 
 //The application MUST, upon query request, show a specified item for a specified table number.
+app.get('/api/foods/:table',(req,res) => {
+    try {
+        let foodObj = {table: req.params.table, food: req.body.food}
+        Orders.getItemAtTable(foodObj)
+        .then(item => { res.status(201).json(item) })
+    } catch (error) {
+        res.status(500).json({ message: 'Can not query food item' })
+    }
+})
 
 //The application MUST, upon query request, show all items for a specified table number.
 
