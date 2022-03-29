@@ -20,6 +20,8 @@
   },
   "proxy": "http://localhost:8000",
   "scripts": {
+    "seed": "npx knex seed:run --knexfile db/knexfile.js",
+    "migrate": "npx knex migrate:latest --knexfile db/knexfile.js",
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "react-scripts start",
