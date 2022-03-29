@@ -7,13 +7,16 @@
 
 ## Installation
 1. Clone the repo to your local machine.
-
-2. Use node package manager [npm](https://www.npmjs.com/) to install necessary packages.
+2. Create a postgres db called paidy 
+3. Use node package manager [npm](https://www.npmjs.com/) to install necessary packages.
 
 ```bash
 npm i
 ```
-3.
+4.
+```bash
+npx knex migrate:latest --knexfile db/knexfile.js
+```
 
 ## Functionality 
 
