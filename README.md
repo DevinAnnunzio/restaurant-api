@@ -2,7 +2,7 @@
 
 ## *Devin Annunzio*
 
-**restaurant-api** is a simple web app for the interview with Paidy
+**restaurant-api** is a simple web app 
 
 
 ## Installation
