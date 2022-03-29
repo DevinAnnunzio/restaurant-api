@@ -13,7 +13,7 @@ async function add(food){
         //convert to seconds before adding into db
         convertedTimeToCook = food.time_to_cook * 60;
     }
-    const updatedFood = {table_number: food.table_number, food: food.food, time_to_cook: convertedTimeToCook}
+    const updatedFood = {table_number: food.table_number, food: food.food.toLowerCase(), time_to_cook: convertedTimeToCook}
     await db("orders").insert(updatedFood);
 }
 
@@ -23,11 +23,23 @@ async function getAllFood(){
     return allOrders
 }
 
+async function deleteOrder(order){
+    //Conv to lower case to better match item
+    let obj = {food:order.food.toLowerCase()}
+    await db('orders').del().where({food:obj.food})
+}
+
 
 //The application MUST, upon query request, show a specified item for a specified table number.
+
 
 //The application MUST, upon query request, show all items for a specified table number.
 
 //The application MUST, upon deletion request, remove a specified item for a specified table number.
+async function deleteItemAtTable(item){
+    console.log("HELPER")
+    console.log(item);
+    await db('orders').del().where({table_number: item.table, food: item.food.toLowerCase()})
+}
 
-module.exports = {add, getAllFood}
+module.exports = {add, getAllFood, deleteOrder, deleteItemAtTable}

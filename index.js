@@ -17,10 +17,10 @@ app.get('/', (req, res) => {
 })
 
 //Add a food item 
-app.post('/api/food', (req, res) => {
+app.post('/api/foods', (req, res) => {
     try {
         Orders.add(req.body)
-            .then(item => { res.status(200).json(item) })
+            .then(item => { res.status(201).json(item) })
     } catch (error) {
         res.status(500).json({ message: 'Can not add food item' })
     }
@@ -36,11 +36,32 @@ app.get('/api/allorders', (req,res) => {
     }
 })
 
+//Remove an item from table by food name
+app.delete('/api/foods',(req,res) =>{
+    try {
+        Orders.deleteOrder(req.body)
+        .then(item => {res.status(200).json(item)})
+    } catch (error) {
+        res.status(500).json({ message: 'Can not delete food item' })
+    }
+})
+
 //The application MUST, upon query request, show a specified item for a specified table number.
 
 //The application MUST, upon query request, show all items for a specified table number.
 
 //The application MUST, upon deletion request, remove a specified item for a specified table number.
+app.delete('/api/foods/:table', (req,res) => {
+    console.log(req.body);
+    console.log(req.params);
+    let foodObj = {table: req.params.table, food: req.body.food}
+    try {
+        Orders.deleteItemAtTable(foodObj)
+        .then(item => {res.status(200).json(item)})
+    } catch (error) {
+        res.status(404).json({ message: 'Can not delete food item requested at table' })
+    }
+})
 
 
 
