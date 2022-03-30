@@ -33,8 +33,8 @@ The current functionality:
 * [✅] The application MAY assign a length of time for the item to prepare as a random time between 5-15 minutes.
 
 
-## Functionality 
-Future functionality:
+## Future Functionality 
+Future functionality plans:
 * [] Calculate time to cook vs when it was created in DB to decalare item as cooked
 * [] Work on UI to make it more presentable
 
