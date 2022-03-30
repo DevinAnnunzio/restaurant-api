@@ -44,7 +44,7 @@ Future functionality plans:
 Here's a walkthrough of implemented user stories: Currently need to add screenshots
 </br>
 <h5>Home screen</h5>
-<img border: 5px solid #555 src="https://user-images.githubusercontent.com/69616397/160763277-de78f727-f5f7-40ef-8441-f384a78bf93c.png" width="800" height="500">
+<img style="border:8px solid black;" src="https://user-images.githubusercontent.com/69616397/160763277-de78f727-f5f7-40ef-8441-f384a78bf93c.png" width="800" height="500">
 <br>
 <h5>Place order screen</h5>
 <img src="https://user-images.githubusercontent.com/69616397/160763452-a0f67a3b-3642-4281-b901-8b2327d09b97.png" width="800" height="500">
