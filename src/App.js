@@ -4,6 +4,8 @@ import axios from "axios";
 import { ListOfOrders } from "./components/ListOfOrders";
 import { PlaceOrder } from "./components/PlaceOrder";
 import { DeleteByName } from "./components/DeleteByName";
+import { QueryItem } from "./components/QueryItem";
+import { QueryTable } from "./components/QueryTable";
 
 function App() {
 const [allOrders, setAllOrders] = useState([]);
@@ -30,6 +32,8 @@ useEffect(() => {
 
       {state === "placeorder"? <PlaceOrder setState={setState} getAllOrders={getAllOrders}/>: <div></div>}
       {state === "deletebyname"? <DeleteByName setState={setState} getAllOrders={getAllOrders}/>: <div></div>}
+      {state === "queryitem"? <QueryItem setState={setState} getAllOrders={getAllOrders}/>: <div></div>}
+      {state === "querytable"? <QueryTable setState={setState} getAllOrders={getAllOrders}/>: <div></div>}
 
     </>
   );

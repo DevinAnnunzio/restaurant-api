@@ -11,7 +11,6 @@ export const ListOfOrders = ({allOrders, getAllOrders}) => {
         <p>Table: {order.table_number}</p>
         <p>{order.cooked === null ? 'N/A' : 'Yes'}</p>
         <FaTrash onClick={()=> {
-            console.log(`${order.table_number} and ${order.food}`)
             axios.delete(`/api/foods/${order.table_number}`, {
                 headers: {
                   

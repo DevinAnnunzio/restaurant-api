@@ -25,8 +25,6 @@ async function getAllFood(){
 
 async function deleteOrder(order){
     //Conv to lower case to better match item
-    console.log(order.food)
-    console.log(order)
     let item = order.food.toLowerCase()
     let obj = {food:item}
     await db('orders').del().where({food:obj.food})
@@ -42,7 +40,10 @@ async function getItemAtTable(item){
 
 //The application MUST, upon query request, show all items for a specified table number.
 async function getAllItemsAtTable(item){
-    let orderRequested = await db('orders').select('food' ).where({table_number: item.table})
+    console.log("HERE DB HELPER")
+    console.log(item)
+    let orderRequested = await db('orders').select('food', 'order_id').where({table_number: item})
+    console.log(orderRequested)
     return orderRequested;
 }
 
