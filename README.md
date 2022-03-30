@@ -33,6 +33,11 @@ The current functionality:
 * [✅] The application MAY assign a length of time for the item to prepare as a random time between 5-15 minutes.
 
 
+## Functionality 
+Future functionality:
+* [] Calculate time to cook vs when it was created in DB to decalare item as cooked
+* [] Work on UI to make it more presentable
+
 
 ## Screen shots
 
@@ -44,7 +49,7 @@ Here's a walkthrough of implemented user stories: Currently need to add screensh
 
 
 ## Notes
-This project was built to learn more about architecture
+This project was built to show server side ability
 
 
 ## Built with
@@ -63,6 +68,10 @@ Please follow below procedure to make a contribution.
 3. Commit your Changes (git commit -m 'feat: Add <featurename>')
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
+
+## Issues 
+Current issues:
+* [] Not displaying all the items at a table on front end.  It correctly recieves them, just doesn't display them
 
 
 
