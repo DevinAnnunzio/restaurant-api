@@ -1,15 +1,15 @@
-const dotenv = require("dotenv").config();
+const dotenv = require('dotenv').config();
 const express = require('express')
 const app = express();
 const knex = require('knex')
-// const cors = require('cors')
+const cors = require('cors')
 const PORT = process.env.PORT || 8000;
 
 const Orders = require('./db/models/dbhelper')
 
 
 //json parsing middleware
-// app.use(cors())
+app.use(cors())
 app.use(express.json())
 app.use(express.static(__dirname + '/build'));
 
@@ -60,12 +60,8 @@ app.get('/api/foods/:table/:food',(req,res) => {
     }
 })
 
-//******************************************** ************************ ************************ ****************** */
-
 //The application MUST, upon query request, show all items for a specified table number.
 app.get('/api/foods/:table', (req,res) => {
-    console.log('heeeere')
-    console.log(req.params.table)
     try {
         Orders.getAllItemsAtTable(req.params.table)
         .then(orders => {res.status(200).json(orders)});

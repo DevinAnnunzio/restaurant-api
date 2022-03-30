@@ -41,7 +41,6 @@ async function getItemAtTable(item){
 //The application MUST, upon query request, show all items for a specified table number.
 async function getAllItemsAtTable(item){
     console.log("HERE DB HELPER")
-    console.log(item)
     let orderRequested = await db('orders').select('food', 'order_id').where({table_number: item})
     console.log(orderRequested)
     return orderRequested;
