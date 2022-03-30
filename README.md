@@ -80,6 +80,7 @@ Please follow below procedure to make a contribution.
 ## Issues 
 Current issues:
 * [] Not displaying all the items at a table on front end.  It correctly recieves them, just doesn't display them
+* [] Possible issue with linking back and front end
 
 
 
