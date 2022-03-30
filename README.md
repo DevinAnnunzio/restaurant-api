@@ -25,13 +25,13 @@ npm start
 ## Functionality 
 
 The current functionality:
-* [✅] The client (the restaurant staff “devices” making the requests) MUST be able to: add one or more items with a table number, remove an item for a table, and query the items still remaining for a table.
-* [✅] The application MUST, upon creation request, store the item, the table number, and how long the item will take to cook.
-* [✅] The application MUST, upon deletion request, remove a specified item for a specified table number.
-* [✅] The application MUST, upon query request, show all items for a specified table number.
-* [✅] The application MUST, upon query request, show a specified item for a specified table number.
-* [✅] The application MAY assign a length of time for the item to prepare as a random time between 5-15 minutes.
-
+* [✅] The client (the restaurant staff “devices” making the requests) can: add one or more items with a table number, remove an item for a table.
+* [✅] The application upon creation request, stores the item, the table number, and how long the item will take to cook.
+* [✅] The application upon deletion request, removes a specified item for a specified table number.
+* [✅] The application shows all items for a specified table number.
+* [✅] The application shows a specified item for a specified table number.
+* [✅] The application assigns a length of time for the item to prepare as a random time between 5-15 minutes if a time isn't given in seconds.
+* [✅] The application deletes a food item using the trash icon.
 
 ## Future Functionality 
 Future functionality plans:
