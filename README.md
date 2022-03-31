@@ -78,9 +78,7 @@ Please follow below procedure to make a contribution.
 5. Open a Pull Request
 
 ## Issues 
-Current issues:
-* [] Not displaying all the items at a table on front end.  It correctly recieves them, just doesn't display them
-* [] Possible issue with linking back and front end
+Current issues: Check issues tab
 
 
 
