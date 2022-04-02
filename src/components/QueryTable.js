@@ -1,12 +1,20 @@
 import axios from "axios";
 import React from "react";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { QueryTableData } from "./QueryTableData";
 
 export const QueryTable = ({setState}) => {
   const [foodOrderTable, setFoodOrderTable] = useState("");
   const [grabbed, setGrabbed] = useState(false)
   const [allFood, setAllFood] = useState([])
+
+  useEffect(() => {
+    // action on update of movies
+    console.log('-----------')
+    console.log(grabbed)
+    console.log(allFood)
+    console.log('-----------')
+}, [grabbed]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -20,15 +28,14 @@ export const QueryTable = ({setState}) => {
       .get(`/api/foods/${foodOrderTable}`)
       .then(
         (data) => {
-            console.log("IN QUERY TABLE")
             let tempArr = data.data
             
 
-            tempArr.forEach((item) => {
-                allFood.push(item)
-            })
-
-            console.log(allFood)
+            // tempArr.forEach((item) => {
+            //     allFood.push(item)
+            // })
+            setAllFood(allFood => ([...allFood, ...tempArr]))
+            // let opp = true;
             setGrabbed(true);
         });
   };

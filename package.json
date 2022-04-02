@@ -20,7 +20,7 @@
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost:9000",
+  "proxy": "http://localhost:8000",
   "scripts": {
     "seed": "npx knex seed:run --knexfile db/knexfile.js",
     "migrate": "npx knex migrate:latest --knexfile db/knexfile.js",
