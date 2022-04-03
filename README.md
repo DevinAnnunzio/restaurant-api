@@ -36,7 +36,6 @@ The current functionality:
 
 ## Future Functionality 
 Future functionality plans:
-* [] Calculate time to cook vs when it was created in DB to decalare item as cooked
 * [] Work on UI to make it more presentable
 
 
