@@ -34,8 +34,8 @@ The current functionality:
 * [✅] The application updates whether or not the item has been cooked based off the time the order was made and the time it takes to cook.
 * [✅] The application deletes a food item using the trash icon.
 
-## Future Functionality 
-Future functionality plans:
+## Future Plans 
+Future plans:
 * [] Work on UI to make it more presentable
 
 
