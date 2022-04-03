@@ -18,6 +18,16 @@ app.get('/', (req, res) => {
     res.send("Oh no")
 })
 
+//Used to test updating cook time
+// app.get('/api', (req,res) => {
+//     try {
+//         Orders.updateAllCookTimes()
+//         .then(orders => {res.status(200).json("hi")});
+//     } catch (error) {
+//         res.status(500).json({ message: 'Can not get all orders' })
+//     }
+// })
+
 //Add a food item 
 app.post('/api/foods', (req, res) => {
     try {
@@ -31,6 +41,7 @@ app.post('/api/foods', (req, res) => {
 //Get all food items
 app.get('/api/allorders', (req,res) => {
     try {
+        Orders.updateAllCookTimes()
         Orders.getAllFood()
         .then(orders => {res.status(200).json(orders)});
     } catch (error) {
@@ -52,6 +63,7 @@ app.delete('/api/foods',(req,res) =>{
 //The application MUST, upon query request, show a specified item for a specified table number.
 app.get('/api/foods/:table/:food',(req,res) => {
     try {
+        Orders.updateAllCookTimes()
         let foodObj = {table: req.params.table, food: req.params.food}
         Orders.getItemAtTable(foodObj)
         .then(item => { res.status(201).json(item) })
@@ -63,6 +75,7 @@ app.get('/api/foods/:table/:food',(req,res) => {
 //The application MUST, upon query request, show all items for a specified table number.
 app.get('/api/foods/:table', (req,res) => {
     try {
+        Orders.updateAllCookTimes()
         Orders.getAllItemsAtTable(req.params.table)
         .then(orders => {res.status(200).json(orders)});
     } catch (error) {

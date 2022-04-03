@@ -6,6 +6,7 @@ import { useState } from 'react'
 export const PlaceOrder = ({setState, getAllOrders}) => {
     const [foodOrder, setFoodOrder] = useState('')
     const [foodOrderTable, setFoodOrderTable] = useState('')
+    const [foodOrderCookTime, setFoodOrderCookTime] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -18,7 +19,7 @@ export const PlaceOrder = ({setState, getAllOrders}) => {
             alert('Please add a table number')
             return
           }
-          axios.post('/api/foods',{table_number: foodOrderTable, food: foodOrder}).then(() => getAllOrders())
+          axios.post('/api/foods',{table_number: foodOrderTable, food: foodOrder, time_to_cook: foodOrderCookTime}).then(() => getAllOrders())
     }
   return (
     <div>
@@ -32,6 +33,7 @@ export const PlaceOrder = ({setState, getAllOrders}) => {
           onChange={(e) => setFoodOrder(e.target.value)}
         />
         </div>
+
         <div>
         <label>Table</label>
         <input
@@ -40,6 +42,17 @@ export const PlaceOrder = ({setState, getAllOrders}) => {
           onChange={(e) => setFoodOrderTable(e.target.value)}
         />
         </div>
+
+        <div>
+        <label>Cook time</label>
+        <input
+          placeholder='Add table number'
+          value={foodOrderCookTime}
+          onChange={(e) => setFoodOrderCookTime(e.target.value)}
+        />
+        </div>
+        
+
         <input type='submit' value='Submit Order'/>
         </form>
         <button onClick={()=>setState("allorders")}>Show all orders</button>

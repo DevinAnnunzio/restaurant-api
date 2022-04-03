@@ -10,10 +10,6 @@ export const QueryTable = ({setState}) => {
 
   useEffect(() => {
     // action on update of movies
-    console.log('-----------')
-    console.log(grabbed)
-    console.log(allFood)
-    console.log('-----------')
 }, [grabbed]);
 
   const onSubmit = (e) => {

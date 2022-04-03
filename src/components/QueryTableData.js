@@ -11,8 +11,6 @@ export const QueryTableData = ({ setState, allFood }) => {
       <button
         onClick={() => {
           setState("allorders");
-          console.log("INSIDE TABLE DATA")
-          console.log(allFood);
         }}
       >
         Show all orders
