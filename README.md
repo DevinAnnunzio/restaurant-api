@@ -1,4 +1,4 @@
-# restaurant-api
+# Restaurant API
 
 ## *Devin Annunzio*
 
